@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title> Company </title>
+     <link th:href="@{/styles/style.css}" rel="stylesheet" />
+     <link th:href="@{/styles/tc-styles.css}" rel="stylesheet" />
+     <link th:href="@{/styles/color-popup.css}" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!--    <link href="styles/style.css" rel="stylesheet" />-->
+<!--    <link href="styles/tc-styles.css" rel="stylesheet" />-->
+<!--    <link href="styles/color-popup.css" rel="stylesheet" />-->
+
+
+</head>
+<body>
+<div class="header element-container">
+    <h1>Trec-Apps</h1>
+    <p>Welcome to Trec-Apps (Test). Here, we offer a wide variety of inter-related apps and services designed to enhance your experience
+        of online browsing above existing solutions. With a Trec-Account, you can make personal connections with your friends, professional
+        connections with your colleagues from work, show off your creativity in ways other services won't allow.
+    </p>
+    <p>Checkout the <b>User Manager</b> to get started.</p>
+    <br>
+    <div class="warning-box"><p>This is NOT a production website. The suite of apps offered by Trec-Apps is still in development.</p></div>
+</div>
+<div class="container element-container">
+    <div class="tc-row">
+        <div class="col-md-5 element-item">
+            <div class="box">
+                <div class="box-header" style="background-color: #58B7FF;">
+                    <h3 class="white-text">User Manager</h3>
+                </div>
+                <div class="box-content" onmouseenter="setSelected(this)" onmouseleave="setUnselected()" onclick="setSelected(this)">
+                     <img th:src="@{/images/User_Icon.png}"/>
+<!--                    <img src="images/User_Icon.png"/>-->
+                    <div class="image-overlay" style="height: 0">
+                        <div class="text-border">
+                            <p>Start you journey here by making a Trec-Account. Once you have a Trec-Account, you will be abe to:</p>
+                            <ul>
+                                <li>Validate your account</li>
+                                <li>Manage active log-on sessions</li>
+                                <li>Set up Multi-factor authentication with either your email or with an authenticator app</li>
+                                <li>Change your password</li>
+                                <li>(Not yet) Manage your subscriptions</li>
+                            </ul>
+                            <br>
+                            <a href="https://test.trecapps.com/Users" target="_blank"><p style="font-size: 16px;">Go To the User Management Console</p></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 element-item">
+            <div class="box">
+                <div class="box-header" style="background-color: #FFC0CB;">
+                    <h3 class="white-text">Brands (Wiki-service - still searching for a name)</h3>
+                </div>
+                <div class="box-content" onmouseenter="setSelected(this)" onmouseleave="setUnselected()" onclick="setSelected(this)">
+                     <img th:src="@{/images/Cyclo_Icon.png}"/>
+<!--                    <img src="images/Cyclo_Icon.png"/>-->
+                    <div class="image-overlay" style="height: 0">
+                        <div class="text-border">
+                            <p>Serves as a home-grown Wiki-service that search and research any topic available in our database.</p>
+                            <br>
+                            <a href="https://test.trecapps.com/brands/article" target="_blank"><p style="font-size: 16px;">Go To the Wiki Service</p></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tc-row">
+        <div class="col-md-5 element-item">
+            <div class="box">
+                <div class="box-header" style="background-color: #800080;">
+                    <h3 class="white-text">Falsehood Tracker</h3>
+                </div>
+                <div class="box-content" onmouseenter="setSelected(this)" onmouseleave="setUnselected()" onclick="setSelected(this)">
+                     <img th:src="@{/images/falsehoods_icon.png}"/>
+<!--                    <img src="images/falsehoods_icon.png"/>-->
+                    <div class="image-overlay" style="height: 0">
+                        <div class="text-border">
+                            <p>Monitor and file a claim against a Public Figure and Institution/Media Outlet for a falsehood they told,
+                                either verbally or in print. Search your favorite public figure or media outlet and see if they are as reliable as you think
+                                they are.</p>
+                            <br>
+                            <a href="https://test.trecapps.com/Falsehoods" target="_blank"><p style="font-size: 16px;">Go To the Falsehood Tracker</p></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 element-item">
+            <div class="box">
+                <div class="box-header"  style="background-color: #FF6347;">
+                    <h3 class="white-text">Coffee-shop</h3>
+                </div>
+                <div class="box-content" onmouseenter="setSelected(this)" onmouseleave="setUnselected()" onclick="setSelected(this)">
+                     <img th:src="@{/images/Coffeshop-l-logo.png}"/>
+<!--                    <img src="images/Coffeshop-l-logo.png"/>-->
+                    <div class="image-overlay" style="height: 0">
+                        <div class="text-border">
+                            <p>Connect with your personal friends on Coffee-shop where you can:</p>
+                            <ul>
+                                <li>Post your accomplishments or your thoughts</li>
+                                <li>Comment on the posts or your friends</li>
+                                <li>(Not yet) Establish events, invite friends, and RSVP to events you've been invited to</li>
+                            </ul>
+                            <br>
+                            <!-- <a href="https://test.trecapps.com/Coffeeshop" target="_blank"><p style="font-size: 16px;">Go To Coffee-shop</p></a> -->
+                            <p class="text-danger" style="font-size: 16px;">Coffee-shop not available</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 50px"></div>
+</div>
+<div class="footer element-container">
+    <p>&copy; 2024 Trec-Apps. All rights reserved.</p>
+</div>
+
+<button class="btn btn-primary act-search" id="act-search">Show Styles</button>
+
+
+<div
+        id="color-popup"
+        class="popup-background"
+>
+    <div  style="background-color: white">
+        <div class="slider-top-bar">
+            <div class="slider-top-bar-buffer">
+                <!-- <ng-content select="top-bar-content"></ng-content> -->
+            </div>
+            <div
+                    class="red-button-container"
+            >
+                <button id="close-popup">
+                     <img th:src="@{/images/X-image.png}" alt="exit button">
+<!--                    <img src="images/X-image.png" alt="exit button">-->
+                </button>
+            </div>
+        </div>
+
+        <div style="padding: 5px">
+            <div class="color-panel" id="color-panel">
+                <div class="color-button"></div>
+            </div>
+            <div class="form-group">
+                <input
+                        id="color-style-check"
+                        type="checkbox"
+                        class="form-check-input"
+                >
+                <label class="form-check-label">Use Dark mode</label>
+
+                <div class="element-item" style="height: 10px"></div>
+                <p><b>Note: </b> Persisting Style will write to Local Storage</p>
+                <button id="update-style-button" class="btn btn-primary"> Persist Style</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
+ <script type="text/javascript" th:src="@{/js/script.js}"></script>
+<!--<script type="text/javascript" src="js/script.js"></script>-->
+
+</body>
+</html>
