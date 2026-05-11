@@ -19,6 +19,11 @@ ext {
     set('springCloudVersion', "2025.1.0")
 }
 
+jar{
+    //archiveClassifier=''
+    enabled = false
+}
+
 dependencies {
     implementation 'org.projectlombok:lombok:1.18.42'
     annotationProcessor 'org.projectlombok:lombok:1.18.42'
