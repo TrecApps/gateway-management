@@ -17,7 +17,7 @@ public class RedirectController {
     @GetMapping
     Mono<ResponseEntity<Void>> redirect(){
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Location", "/Pause/");
+        headers.add("Location", "/core/");
         ResponseEntity<Void> ret = new ResponseEntity<>(headers, HttpStatus.FOUND);
         return Mono.just(ret);
     }
