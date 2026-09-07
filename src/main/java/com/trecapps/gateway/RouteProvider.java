@@ -82,6 +82,7 @@ public class RouteProvider {
 
                                             return filter.stripPrefix(1);
                                         })
+
                                         .uri(pieces[1]))
                 );
 
