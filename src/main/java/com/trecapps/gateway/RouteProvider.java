@@ -21,6 +21,9 @@ public class RouteProvider {
     @Autowired
     GatewayMap gatewayMap;
 
+    @Value("${trecapps.route.single:#{null}}")
+    String singleRoutes;
+
     public static String capitalize(String str) {
         if (str == null || str.isEmpty()) {
             return str;
@@ -28,10 +31,34 @@ public class RouteProvider {
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
+    private void setSingleRoutes(RouteLocatorBuilder.Builder builder){
+        if(singleRoutes == null){
+            return;
+        }
+        String[] routePieces = singleRoutes.split(";");
+        if(routePieces.length % 3 != 0){
+            throw new IllegalStateException("If set, 'trecapps.route.single' needs to be divided into a set of 3 by ';'!");
+        }
+
+        for(int c = 2; c < routePieces.length; c+=3){
+            final int f_c = c;
+            builder = builder.route((PredicateSpec sp) -> {
+               return sp.path(routePieces[f_c-2])
+                       .filters((GatewayFilterSpec filter) -> {
+                               return filter.stripPrefix(Integer.parseInt(routePieces[f_c]))
+                                       .removeResponseHeader("WWW-Authenticate")
+                                       ;})
+
+                       .uri(routePieces[f_c-1]);
+            });
+        }
+    }
+
     @Bean
     public RouteLocator tcTestRoutes(RouteLocatorBuilder builder){
-        AtomicReference<RouteLocatorBuilder.Builder> ret = new AtomicReference<>(builder.routes());
 
+        AtomicReference<RouteLocatorBuilder.Builder> ret = new AtomicReference<>(builder.routes());
+        setSingleRoutes(ret.get());
         gatewayMap.getBackend().forEach((String route, String target) -> {
             ret.set(ret.get().route((PredicateSpec ps) ->
                     ps.path(String.format("/%s/**",route))
